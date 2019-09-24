@@ -1,12 +1,7 @@
-
-
 export class MiComponente extends HTMLElement {
 
-    constructor() {
-
-        super()
-        
-const template = `
+    get template() {
+        return `
 <style>
 
         :host {
@@ -26,17 +21,34 @@ const template = `
             background-color: brown;
             padding: 0.2rem
             
-        }    
+        }  
+        
+        p{
+            font-size: 1.4rem
+        }
     </style>
     <div>
         <h1>Ejemplo de Componentes</h2>
         <p>Esto es un componente</p>
-    </div>
-`
+    </div>`}
+
+    constructor() {
+
+        super()
         const shadow = this.attachShadow({mode: 'open'})
 
-        shadow.innerHTML = template
+        shadow.innerHTML = this.template
+        console.log('se ha ejecutado el constructor')
     }
+
+
+        createdCallback = function() {
+            console.log('se ha creado un elemento');
+          };
+          
+        attachedCallback = function() {
+            console.log('se ha añadido un elemento al DOM');
+          }
 }
 
 customElements.define('mi-componente', MiComponente)
