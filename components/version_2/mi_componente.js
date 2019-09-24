@@ -1,3 +1,11 @@
+
+
+export class MiComponente extends HTMLElement {
+
+    constructor() {
+
+        super()
+        
 const template = `
 <style>
 
@@ -25,13 +33,6 @@ const template = `
         <p>Esto es un componente</p>
     </div>
 `
-
-export class MiComponente extends HTMLElement {
-
-    constructor() {
-
-        super()
-
         const shadow = this.attachShadow({mode: 'open'})
 
         shadow.innerHTML = template

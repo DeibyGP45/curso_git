@@ -9,7 +9,7 @@ class MiComponente extends HTMLElement {
 
         const shadow = this.attachShadow({mode: 'open'})
 
-        this.innerHTML = element.innerHTML
+        shadow.innerHTML = element.innerHTML
     }
 }
 
