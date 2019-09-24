@@ -30,6 +30,7 @@ export class MiComponente extends HTMLElement {
     <div>
         <h1>Ejemplo de Componentes</h2>
         <p>Esto es un componente</p>
+        <p slot="slot1">Texto variable</p>
     </div>`}
 
     constructor() {

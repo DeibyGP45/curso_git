@@ -5,15 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Probando componente - Boton</title>
-    <script src="./boton_comprar.js" type="module" ></script>
+    <script src="./bootstrap.js" type="module" ></script>
 </head>
 <body>
     <header>
         <h1>Probando componentes</h1>
     </header>
 
-    <boton-comprar></boton-comprar>
+    <boton-comprar>
+        <p slot="slot1">Reservar 🎫</p>
+        <p slot="slot2">Gracias por Reservar</p>
+    </boton-comprar>
+    
+    <boton-comprar>
+            <p slot="slot1">comprar 🛒</p>
+            <p slot="slot2">Gracias por compar</p>
+    </boton-comprar>
 
-    <div><button>Desconectar</button></div>
+    <div>
+        <button id="btn-desconectar">Conectar</button>
+    </div>
 </body>
 </html>
