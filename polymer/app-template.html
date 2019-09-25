@@ -1,0 +1,60 @@
+<link rel="import" href="../polymer/bower_components/">
+<dom-module id="app-prueba">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background-color: bisque;
+        margin: 1rem;
+        padding:1rem;
+        border:1px solid
+      }
+
+      iron-icon {
+        --iron-icon-fill-color: brown;
+      }
+      :host([pressed]) iron-icon {
+      --iron-icon-fill-color: rgb(189, 148, 14);
+    }
+
+    </style>
+
+    <!-- Desde aqui shadow DOM -->
+
+    <h2>Saludos [[prop1]]!</h2>
+    <p>
+      <iron-icon icon="build" on-click="onClickIcono"></iron-icon>
+    </p>
+    <p>Hecho con Polymer</p>
+    <address>&copy; [[autor]] - [[fecha]]</address>
+  </template>
+
+  <script>
+    /**
+     * `app-user`
+     * prueba
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class AppUser extends Polymer.Element {
+      static get is() { return 'app-user'; }
+      static get properties() {
+        return {
+
+
+        };
+      }
+
+      constructor() {
+        super()
+      }
+      
+      
+    } //Fin de la classe 
+
+
+    customElements.define(AppUser.is, AppUser);
+  </script>
+</dom-module>

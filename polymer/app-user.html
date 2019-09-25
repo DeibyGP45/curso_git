@@ -1,0 +1,91 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/bower_components/polymer/polymer-element.html">
+<dom-module id="app-prueba">
+    <template>
+        <style>
+            :host {
+                display: block;
+                background-color: bisque;
+                margin: 1rem;
+                padding: 1rem;
+                border: 1px solid
+            }
+
+            iron-icon {
+                --iron-icon-fill-color: brown;
+            }
+
+            :host([pressed]) iron-icon {
+                --iron-icon-fill-color: rgb(189, 148, 14);
+            }
+
+            input {
+                padding: 1rem;
+                border: none;
+                border-bottom: 1px solid gainsboro;
+                width: 100%;
+                background-color: inherit
+            }
+        </style>
+
+        <!-- Desde aqui shadow DOM -->
+        <div>
+            <h2 class="extra">[[titulo]]</h2>
+            <input type="text" id="nombre" placeholder="nombre" value="{{userData.nombre:: input}}">
+        </div>
+        <div>
+            <input type="text" id="apellido" placeholder="apellido" value="{{userData.apellido:: input}}">
+        </div>
+        <p>hola [[userData.]]</p>
+    </template>
+
+    <script>
+        /**
+         * `app-user`
+         * prueba
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class AppUser extends Polymer.Element {
+            static get is() { return 'app-user'; }
+            static get properties() {
+                return {
+
+                    titulo: {
+                        type: String,
+                        value: 'Usuario'
+                    },
+                    userData: {
+                        type: Object,
+                        value:function () {
+                            return {
+                                nombre: '',
+                                apellido: ''
+                            }},
+                        notify: true
+                    },
+
+                    userData: function () {
+                        return {
+                            nombre: String,
+                            apellido: String
+
+                        }},
+                        notify:true
+                }
+            };
+        }
+
+        constructor() {
+            super()
+        }
+      
+      
+    } //Fin de la classe 
+
+
+        customElements.define(AppUser.is, AppUser);
+    </script>
+</dom-module>
