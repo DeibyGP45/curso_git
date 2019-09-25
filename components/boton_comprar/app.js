@@ -3,12 +3,15 @@ export class App {
     constructor() {
         this.isConeccted = false
 
-        this.BtnConnect = document.querySelector('button')
+        this.btnConnect = document.querySelector('button')
         this.aBotonesComprar = document.querySelectorAll('boton-comprar')
 
 
-        this.BtnConnect.addEventListener('click', this.onClick.bind(this))
+        this.btnConnect.addEventListener('click', this.onClick.bind(this))
+
+        this.aBotonesComprar = addEventListener('setOperacion', this.onOperacion.bind(this))
     }
+
     onClick() {
         this.isConeccted = !this.isConeccted
         if (this.isConeccted) {
